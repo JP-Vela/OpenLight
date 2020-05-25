@@ -7,14 +7,36 @@
         <p class="lightDarkF light">Some text</p>
         <p class="lightDarkF light">Some text</p>
 
-        <button id="toggler" class="lightDarkB lightDarkF dark" onclick="toggleMode();">Button</button>
+        <button id="toggler" class="lightDarkB lightDarkF dark" onclick="toggleMode();">Toggle</button>
     </body>
-
-
+    
     <style>
+        /*some extra styles*/
+        @font-face {
+            /* font from https://fonts.google.com/specimen/Roboto+Mono */
+            font-family: "RobotoMono";
+            src: url("Roboto_Mono/RobotoMono-Thin.ttf");
+        }
+
         p {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-family: RobotoMono;
             font-weight: bold;
         }
+
+        button {
+            font-family: RobotoMono;
+            font-weight: bold;
+        }
+
     </style>
+
+    <script>
+        //Changing the default colors
+        openLightColors = {
+            darkBackgroundStyle: "rgb(30,30,38)",
+            lightBackgroundStyle: "rgb(255,255,255)",
+            darkForegroundStyle: "rgb(240,240,250)",
+            lightForegroundStyle: "rgb(30,30,40)"
+        }
+    </script>
 </html>

@@ -14,7 +14,7 @@ modeBackgroundId = "lightDarkB";
 modeForegroundId = "lightDarkF" ;
 
 
-//Corresponding colors for forground and background of light mode and dark mode
+//Corresponding colors for forground and background of light mode and dark mode (these are just default colors)
 openLightColors = {
 darkBackgroundStyle: "rgb(30,30,38)",
 lightBackgroundStyle: "rgb(255,255,255)",
