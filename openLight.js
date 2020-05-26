@@ -1,5 +1,7 @@
 //Made by JP
 
+//Cookie used for user preference does not work with local files
+
 //Dark and light mode strings for easy readability
 const dark = "dark";
 const  light = "light";
