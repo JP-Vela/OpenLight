@@ -4,7 +4,7 @@
 const dark = "dark";
 const  light = "light";
 
-const version = "1.0"; //Current running version
+const version = "1.1"; //Current running version
 
 var mode = light; //default mode is light mode (it is toggles when the window loads)
 var openlightcookie; //cookie to store prefered mode
@@ -26,7 +26,6 @@ lightForegroundStyle: "rgb(30,30,40)"
 //Toggle between light mode and dark mode USE THIS FUNCTION FOR ONCLICK
 function toggleMode(){
 
-    toggleButton = document.getElementById("toggler");
     if(mode == dark){
         mode = light;
         lightMode();
@@ -96,7 +95,7 @@ function darkMode(){
 }
 
 
-//Used to set openlightcookie
+//Used to set openlightcookie (function from w3schools)
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -104,7 +103,7 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-//Used to get openlightcookie
+//Used to get openlightcookie (function from w3schools)
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
