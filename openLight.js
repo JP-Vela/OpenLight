@@ -6,7 +6,7 @@ const  light = "light";
 
 const version = "1.0"; //Current running version
 
-var mode = dark; //default mode is light mode (it is toggles when the window loads)
+var mode = light; //default mode is light mode (it is toggles when the window loads)
 var openlightcookie; //cookie to store prefered mode
 
 //Foreground and background mode ids
@@ -131,6 +131,12 @@ window.onload = function(){
         mode = openlightcookie; //Set the mode to the user's prefered mode
     }
 
-    this.toggleMode();
+    //Set the initial mode
+    if(mode == dark){
+        this.darkMode();
+    } else {
+        this.lightMode();
+    }
+
     this.console.log("This site uses OpenLight version "+version+" for dark mode toggling!");
 };
