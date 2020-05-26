@@ -15,13 +15,13 @@ An Open source Javascript library for easily adding dark mode to websites
 # Usage
 Within the HTML you may change the default color schemes with the following Javascript code in a script tag
 ```javascript
-        //Changing the default colors
-        openLightColors = {
-            darkBackgroundStyle: "rgb(30,30,38)",
-            lightBackgroundStyle: "rgb(255,255,255)",
-            darkForegroundStyle: "rgb(240,240,250)",
-            lightForegroundStyle: "rgb(30,30,40)"
-        }
+//Changing the default colors
+openLightColors = {
+    darkBackgroundStyle: "rgb(30,30,38)",
+    lightBackgroundStyle: "rgb(255,255,255)",
+    darkForegroundStyle: "rgb(240,240,250)",
+    lightForegroundStyle: "rgb(30,30,40)"
+}
 ```
 To add dark/light mode to elements, add the prefered classes to the element.
 Add dark mode to the the text foreground of an element with the following HTML
