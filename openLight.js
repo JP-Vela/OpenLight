@@ -1,21 +1,21 @@
 //Made by JP
 
 //Dark and light mode strings for easy readability
-dark = "dark";
-light = "light";
+const dark = "dark";
+const  light = "light";
 
-version = "1.0"; //Current running version
+const version = "1.0"; //Current running version
 
-mode = dark; //default mode is light mode (it is toggles when the window loads)
-
+var mode = dark; //default mode is light mode (it is toggles when the window loads)
+var openlightcookie; //cookie to store prefered mode
 
 //Foreground and background mode ids
-modeBackgroundId = "lightDarkB";
-modeForegroundId = "lightDarkF" ;
+const modeBackgroundId = "lightDarkB";
+const modeForegroundId = "lightDarkF" ;
 
 
 //Corresponding colors for forground and background of light mode and dark mode (these are just default colors)
-openLightColors = {
+var openLightColors = {
 darkBackgroundStyle: "rgb(30,30,38)",
 lightBackgroundStyle: "rgb(255,255,255)",
 darkForegroundStyle: "rgb(240,240,250)",
@@ -34,6 +34,8 @@ function toggleMode(){
         mode = dark;
         darkMode();
     }
+
+    setCookie("openlightcookie", mode, 30);
 }
 
 //Make the page light mode
@@ -93,8 +95,42 @@ function darkMode(){
     }
 }
 
+
+//Used to set openlightcookie
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+//Used to get openlightcookie
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+}
 //Initializes everything onload
 window.onload = function(){
+
+    //Set cookie variable
+    openlightcookie = getCookie("openlightcookie");
+
+    //If the cookie is no empty
+    if(openlightcookie!="") {
+        mode = openlightcookie; //Set the mode to the user's prefered mode
+    }
+
     this.toggleMode();
     this.console.log("This site uses OpenLight version "+version+" for dark mode toggling!");
 };
