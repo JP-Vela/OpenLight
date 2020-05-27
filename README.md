@@ -1,7 +1,7 @@
 # OpenLight
 An Open source Javascript library for easily adding dark mode to websites
 
-### These instructions are for version 1.1. the usage will change slightly in the future for verision 1.2
+### These instructions are for version 1.1 the usage will change slightly in the future for verision 1.2
 
 # Installation Offline
 #### Add the following line to your HTML file
