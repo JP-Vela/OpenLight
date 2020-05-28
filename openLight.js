@@ -9,6 +9,8 @@ class OpenLight {
         this.dark = "dark";
         this.light = "light";
 
+        this.transitionTime = "0.5s";
+
         this.changeTypes = {AUTO:0,MANUAL:1};
         this.changeType = this.changeTypes.AUTO;
 
@@ -183,6 +185,20 @@ class OpenLight {
         }
 
         if(this.changeType==this.changeTypes.MANUAL){
+
+            //Add smooth transition when changing
+            var elements = document.getElementsByClassName(this.modeBackgroundId);
+
+            for(var i = 0;i<elements.length;i++){
+                elements[i].style.transitionDuration=this.transitionTime;
+            }
+
+            elements = document.getElementsByClassName(this.modeForegroundId);
+            
+            for(var i = 0;i<elements.length;i++){
+                elements[i].style.transitionDuration=this.transitionTime;
+            }
+
             //Set the initial mode
             if(this.mode == this.dark){
                 this.darkModeManual();
@@ -256,7 +272,8 @@ class OpenLight {
         for(var i=0;i<this.backgrounds.length;i++){
             for(var j=0;j<this.backgrounds[i].length;j++){
                 if(this.arrayCompare(i,j,this.backgrounds)){
-                    this.backgrounds[i][j].style.backgroundColor = this.openLightColors.lightBackgroundStyle;
+                    this.backgrounds[i][j].style.backgroundColor = this.openLightColors.lightBackgroundStyle; //Change  color
+                    this.backgrounds[i][j].style.transitionDuration= this.transitionTime; //Add smooth transition
                 }
             }
         }
@@ -264,7 +281,8 @@ class OpenLight {
         for(var i=0;i<this.foregrounds.length;i++){
             for(var j=0;j<this.foregrounds[i].length;j++){
                 if(this.arrayCompare(i,j,this.foregrounds)){
-                    this.foregrounds[i][j].style.color = this.openLightColors.lightForegroundStyle;
+                    this.foregrounds[i][j].style.color = this.openLightColors.lightForegroundStyle; //Change color
+                    this.foregrounds[i][j].style.transitionDuration= this.transitionTime; //Add smooth transition
                 }
             }
         }
