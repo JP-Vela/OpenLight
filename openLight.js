@@ -111,7 +111,6 @@ class OpenLight {
             this.darkModeManual();
         }
 
-        this.setCookie("openlightcookie", this.mode, 30);
     }
 
     //Manually change the page to light mode
@@ -318,7 +317,6 @@ class OpenLight {
             this.darkModeAuto();
         }
 
-        this.setCookie("openlightcookie", this.mode, 30);
     }
 
     //Toggle between dark and light mode
@@ -328,6 +326,8 @@ class OpenLight {
         } else if(this.changeType==this.changeTypes.AUTO){
             this.toggleModeAuto();
         }
+
+        this.setCookie("openlightcookie", this.mode, 30);
     }
 
     //Change to light mode
