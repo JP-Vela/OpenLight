@@ -192,8 +192,6 @@ class OpenLight {
             for(var i = 0;i<elements.length;i++){
                 elements[i].style.transitionDuration=this.transitionTime;
             }
-
-            elements = document.getElementsByClassName(this.modeForegroundId);
             
             for(var i = 0;i<elements.length;i++){
                 elements[i].style.transitionDuration=this.transitionTime;
