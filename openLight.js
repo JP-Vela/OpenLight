@@ -176,7 +176,10 @@ class OpenLight {
         this.openlightcookie = this.getCookie("openlightcookie");
         //If the cookie is no empty
         if(this.openlightcookie!="") {
+            console.log("Cookie is set");
             this.mode = this.openlightcookie; //Set the mode to the user's prefered mode
+        } else {
+            console.log("Cookie is not set");
         }
 
         if(this.changeType==this.changeTypes.MANUAL){
